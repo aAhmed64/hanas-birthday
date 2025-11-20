@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+
+        #startScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tap screen -->
+    <div id="startScreen" onclick="startMusic()">
+        Tap to Start 🎧
+    </div>
+
+    <!-- Your song -->
+    <audio id="music">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- The birthday card -->
+    <iframe src="https://ewishwell.com/w/hana-birthday"></iframe>
+
+    <script>
+        function startMusic() {
+            let startScreen = document.getElementById("startScreen");
+            let music = document.getElementById("music");
+
+            startScreen.style.display = "none";   // hide screen
+            music.play();                          // play audio
+        }
+    </script>
+
+</body>
+</html>
